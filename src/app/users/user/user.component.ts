@@ -16,14 +16,14 @@ export class UserComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.user = {
       id: this.route.snapshot.params['id'],
-      name: 'random'
+      name:  this.route.snapshot.params['name']
     };
 
     this.paramsSubscription = this.route.params
       .subscribe(
         (params: Params) => {
           this.user.id = params['id'];
-          this.user.name = 'random';
+          this.user.name = params['name'];
         }
       );
   }
